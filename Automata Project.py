@@ -24,7 +24,7 @@ def save_results(phones, emails):
         for e in emails:
             f.write(e + "\n")
 
-    print("\n📁 Results saved to results.txt")
+    print("\n Results saved to results.txt")
 
 
 #DFA EMAIL VALIDATOR
@@ -184,3 +184,4 @@ while True:
 
     else:
         print("Invalid choice.")
+
