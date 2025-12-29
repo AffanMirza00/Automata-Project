@@ -100,24 +100,6 @@ def is_valid_phone(num):
 
     return state in [1,4,6]
 
-
-#NFA → DFA DEMO
-def nfa_accepts(string):
-    states = {"q0"}
-
-    for ch in string:
-        new_states = set()
-        for s in states:
-            if s == "q0":
-                new_states.add("q0")
-                if ch == "a": new_states.add("q1")
-            elif s == "q1" and ch == "b":
-                new_states.add("q2")
-        states = new_states
-
-    return "q2" in states
-
-
 #Main Program
 while True:
     print("\n===================================================")
@@ -126,8 +108,7 @@ while True:
     print("1. Extract Phone Numbers & Emails (Regex)")
     print("2. Validate Email using DFA")
     print("3. Validate Phone Number using DFA")
-    print("4. Test NFA Example (string ending with 'ab')")
-    print("5. Exit")
+    print("4. Exit")
 
     choice = input("\nEnter option number: ")
 
@@ -169,19 +150,10 @@ while True:
         print("\n Valid Number (DFA Accepted)" if is_valid_phone(num)
               else "\n Invalid Phone Number")
 
-
-    #NFA
-    elif choice == "4":
-        s = input("\nEnter string for NFA test: ")
-        print("\n Accepted by NFA (string ends with 'ab')" if nfa_accepts(s)
-              else "\n Rejected by NFA")
-
-
     #Exit
-    elif choice == "5":
+    elif choice == "4":
         print("\nThanks for using the project!")
         break
 
     else:
         print("Invalid choice.")
-
